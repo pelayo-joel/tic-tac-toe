@@ -54,7 +54,7 @@ def GameSetup():
                 IAMode = False
                 for i in range(0, 2):
                     playersName[i] = str(input(f"Player {i+1} username (' ' are prohibited): "))
-                    if " " in playersName[i] or playersName[i] == "":
+                    if " " in playersName[i] or playersName[i] == "" or '"' in playersName[i]:
                         playersName[i] = f"Guest{i+1}"
                     if playersName[i].lower() in scores:
                         print(f"Welcome back {playersName[i]}")
@@ -74,7 +74,7 @@ def GameSetup():
                 if optionIA == "EasyIA":
                     playersName[0] = str(input(f"Player username : "))
                     playersName[1] = "EasyIA"
-                    if playersName[0] == "":
+                    if playersName[0] == "" or '"' in playersName[0]:
                         playersName[0] = f"Guest1"
                     if playersName[0].lower() in scores:
                         print(f"Welcome back {playersName[0]}")
@@ -88,7 +88,7 @@ def GameSetup():
                 else:
                     playersName[0] = str(input(f"Player username : "))
                     playersName[1] = "DrawIA"
-                    if playersName[0] == "":
+                    if playersName[0] == "" or '"' in playersName[0]:
                         playersName[0] = f"Guest1"
                     if playersName[0].lower() in scores:
                         print(f"Welcome back {playersName[0]}")
